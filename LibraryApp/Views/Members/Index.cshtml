@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Member>
+
+    <h1>Members</h1>
+    <a asp-controller="Members" asp-action="Create" class="btn btn-primary">Create</a> 
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Membership Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.FirstName @member.LastName</td>
+                <td>@member.Email</td>
+                <td>@member.PhoneNumber</td>
+                <td>@member.MembershipDate.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@member.Id" class="btn-sm btn-secondary">Details</a>
+                    <span> </span>
+                    <a asp-action="Edit" asp-route-id="@member.Id" class="btn-sm btn-secondary">Edit</a>
+                    <span> </span>
+                    <a asp-action="Delete" asp-route-id="@member.Id" class="btn-sm btn-secondary">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

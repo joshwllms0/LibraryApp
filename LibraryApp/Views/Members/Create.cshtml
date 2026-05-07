@@ -1,0 +1,30 @@
+﻿@model Member
+
+<h2>Create New Member</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <label asp-for="FirstName">First Name</label>
+    <input asp-for="FirstName" />
+    <span asp-validation-for="FirstName"></span>
+    <br />
+    <label asp-for="LastName">Last Name</label>
+    <input asp-for="LastName" />
+    <span asp-validation-for="LastName"></span>
+    <br />
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <br />
+    <label asp-for="PhoneNumber">Phone Number</label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+    <br />
+    <label asp-for="MembershipDate">Membership Date</label>
+    <input asp-for="MembershipDate" />
+    <span asp-validation-for="MembershipDate"></span>
+    <br />
+    <br />
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
